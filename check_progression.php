@@ -27,22 +27,18 @@ function checkStringOnProgression($string = '')
         return 0;
     }
     
-    $diff = 0;
-    for ($i = 1; $i < $count; $i++) {
-        if ($i == 1) {
-            if (!is_numeric($array[0]) || !is_numeric($array[1])) {
-                return 0;
-            }
-            
-            $diff = $array[1] - $array[0];
-        } else {
-            if (!is_numeric($array[$i])) {
-                return 0;
-            }
-            
-            if (($array[$i] - $array[$i-1]) != $diff) {
-                return 0;
-            } 
+    // находим разность прогрессии
+    if (!is_numeric($array[0]) || !is_numeric($array[1])) {
+        return 0;
+    }
+    $diff = $array[1] - $array[0];
+    
+    for ($i = 2; $i < $count; $i++) {
+        if (!is_numeric($array[$i])) {
+            return 0;
+        }
+        if (($array[$i] - $array[$i-1]) != $diff) {
+            return 0;
         }
     }
     
