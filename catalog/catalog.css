@@ -1,0 +1,18 @@
+.filter {
+    display: inline-block;
+    padding: 0 10px;
+}
+.filter_value.inactive {
+    color: #bbb;
+}
+.filter_value.selected {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.page_item {
+    display: inline-block;
+}
+.page_item.current {
+    font-weight: bold;
+}
